@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Connect</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body {
+  background: #101827;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px 15px;
+}
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 25px;
+}
+button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.facebook { background: #1877f2; color: white; }
+.instagram { background: #d94685; color: white; }
+</style>
+</head>
+<body>
+<h1>🌐 Social Connect</h1>
+<p>Connect and manage your social platforms in one place.</p>
+
+<div class="card">
+<h2>Choose a platform</h2>
+<button class="facebook" onclick="setup('Facebook')">
+Connect Facebook
+</button>
+<button class="instagram" onclick="setup('Instagram')">
+Connect Instagram
+</button>
+<p id="message"></p>
+</div>
+
+<script>
+const tg = window.Telegram.WebApp;
+tg.ready();
+tg.expand();
+
+function setup(platform) {
+  document.getElementById("message").textContent =
+    platform + " secure connection setup is coming next.";
+}
+</script>
+</body>
+</html>
